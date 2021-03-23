@@ -26,6 +26,8 @@
 * spiWrite
 * spiXfer
 
+#DEF
+
 * PI_HIGH - A high value
 * PI_LOW - A low value
 * PI_ON - A high value
@@ -35,4 +37,3 @@
 * PI_PUD_OFF - No pull-up associated with the gpio
 * PI_PUD_UP - Pull-up the gpio to high
 * PI_PUD_DOWN - Pull-down the gpio to low
-
