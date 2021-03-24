@@ -25,7 +25,8 @@
  */
 
 
-#include "LedControl.h"
+#include <LedControl.h>
+using byte = unsigned char;
 
 //the opcodes for the MAX7221 and MAX7219
 #define OP_NOOP   0
@@ -108,7 +109,7 @@ void LedControl::clearDisplay(int addr) {
     }
 }
 
-void LedControl::setLed(int addr, int row, int column, boolean state) {
+void LedControl::setLed(int addr, int row, int column, bool state) {
     int offset;
     byte val=0x00;
 
@@ -117,7 +118,7 @@ void LedControl::setLed(int addr, int row, int column, boolean state) {
     if(row<0 || row>7 || column<0 || column>7)
         return;
     offset=addr*8;
-    val=B10000000 >> column;
+    val = B10000000 >> column;
     if(state)
         status[offset+row]=status[offset+row]|val;
     else {
@@ -152,7 +153,7 @@ void LedControl::setColumn(int addr, int col, byte value) {
     }
 }
 
-void LedControl::setDigit(int addr, int digit, byte value, boolean dp) {
+void LedControl::setDigit(int addr, int digit, byte value, bool dp) {
     int offset;
     byte v;
 
@@ -168,7 +169,7 @@ void LedControl::setDigit(int addr, int digit, byte value, boolean dp) {
     spiTransfer(addr, digit+1,v);
 }
 
-void LedControl::setChar(int addr, int digit, char value, boolean dp) {
+void LedControl::setChar(int addr, int digit, char value, bool dp) {
     int offset;
     byte index,v;
 
@@ -182,7 +183,7 @@ void LedControl::setChar(int addr, int digit, char value, boolean dp) {
         //no defined beyond index 127, so we use the space char
         index=32;
     }
-    v=pgm_read_byte_near(charTable + index); 
+    v = pgm_read_byte_near(charTable + index); 
     if(dp)
         v|=B10000000;
     status[offset+digit]=v;
