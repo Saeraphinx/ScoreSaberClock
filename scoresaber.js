@@ -64,8 +64,13 @@ function prepData() {
 
   displaySSData[5] = Number(ss.substring(ss.indexOf("\"averageRankedAccuracy\": ") + 25, ss.indexOf(",", ss.indexOf("\"averageRankedAccuracy\": "))));
   //display 5: averageRankedAcc
-  console.log(Date.now() + ": Completed Data Processing (" + display + ")");
-  
+  console.log(Date.now() + ": Completed Data Processing (" + displaySSData + ")");
+
+
+  displayInfo(display0);
+  displayInfo(display1);
+  displayInfo(display2);
+  console.log(Date.now() + ": Completed Display Building ("+display0[2]+","+display1[2]+","+display2[2]+")");
 }
 
 function displayInfo(display) {
@@ -109,5 +114,5 @@ switch (type) {
     lc.showNumber(display[2],display[0])  
     break;
 }
-
+console.log("Display" + display[2] + " with type " + type);
 }
