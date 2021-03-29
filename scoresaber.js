@@ -9,6 +9,11 @@ var display1 = [0,0,1];
 var display2 = [0,0,2];
 //END CONFIG
 
+var LedControl = require("rpi-led-control");
+var lc = new LedControl(14,18,15);
+var ld = new LedControl(13,26,19);
+var le = new LedControl(23,25,24);
+
 var ss = "";
 var displaySSData = [0,0,0,0,0,0];
 
@@ -67,51 +72,51 @@ function prepData() {
   console.log(Date.now() + ": Completed Data Processing (" + displaySSData + ")");
 
 
-  displayInfo(display0);
-  displayInfo(display1);
-  displayInfo(display2);
+  displayInfo(display0,lc);
+  displayInfo(display1,ld);
+  displayInfo(display2,le);
   console.log(Date.now() + ": Completed Display Building ("+display0[2]+","+display1[2]+","+display2[2]+")");
 }
 
-function displayInfo(display) {
+function displayInfo(display, lcd) {
 let type = display[1];
 
 // showNumber(deviceNumber, num, [decimalplaces], [minimumdigits], [leftjustified], [pos], [dontclear])
 switch (type) {
   // SPECIAL CASES
   case 2: // pp
-    lc.showNumber(display[2],displaySSData[0],1,5,false,0);
-    lc.setChar(display[2], 7, "P", true);
-    lc.setChar(display[2], 6, "P", true);
+    lcd.showNumber(display[2],displaySSData[0],1,5,false,0);
+    lcd.setChar(display[2], 7, "P", true);
+    lcd.setChar(display[2], 6, "P", true);
     break;
   case 3: // 4 digits each for played, total / ranked
-    lc.showNumber(display[2],displaySSData[3],0,1,true,7);
-    lc.showNumber(display[2],displaySSData[4],0,1,false,0);
+    lcd.showNumber(display[2],displaySSData[3],0,1,true,7);
+    lcd.showNumber(display[2],displaySSData[4],0,1,false,0);
     break;
   case 4: // 4 digits each for played, ranked / total
-    lc.showNumber(display[2],displaySSData[4],0,1,true,7);
-    lc.showNumber(display[2],displaySSData[3],0,1,false,0);
+    lcd.showNumber(display[2],displaySSData[4],0,1,true,7);
+    lcd.showNumber(display[2],displaySSData[3],0,1,false,0);
     break;
   case 5: // totalPlays
-    lc.showNumber(display[2],displaySSData[3],0,1,false,0);
+    lcd.showNumber(display[2],displaySSData[3],0,1,false,0);
     break;   
   case 6: // rankedPlays
-    lc.showNumber(display[2],displaySSData[4],0,1,false,0);
+    lcd.showNumber(display[2],displaySSData[4],0,1,false,0);
     break;   
   case 7: // rank
-    lc.showNumber(display[2],displaySSData[1],0,1);
+    lcd.showNumber(display[2],displaySSData[1],0,1);
     break;
   case 8: // countryRank
-    lc.showNumber(display[2],displaySSData[2],0,1);
+    lcd.showNumber(display[2],displaySSData[2],0,1);
     break;
 
   //DEFAULT CASES
   case 1: // Double, rounded to hundreths 
-    lc.showNumber(display[2],display[0],2,3);
+    lcd.showNumber(display[2],display[0],2,3);
     break;
   case 0: // Integer, no formatting
   default:
-    lc.showNumber(display[2],display[0])  
+    lcd.showNumber(display[2],display[0])  
     break;
 }
 console.log("Display" + display[2] + " with type " + type);
