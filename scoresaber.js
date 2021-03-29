@@ -75,7 +75,7 @@ function prepData() {
   displayInfo(display0,lc);
   displayInfo(display1,ld);
   displayInfo(display2,le);
-  console.log(Date.now() + ": Completed Display Building ("+display0[2]+","+display1[2]+","+display2[2]+")");
+  console.log(Date.now() + ": Completed Display Building ("+display0[1]+","+display1[1]+","+display2[1]+")");
 }
 
 function displayInfo(display, lcd) {
@@ -85,29 +85,29 @@ let type = display[1];
 switch (type) {
   // SPECIAL CASES
   case 2: // pp
-    lcd.showNumber(0,displaySSData[0],1,5,false,0);
+    lcd.showNumber(0,displaySSData[0],1);
     lcd.setChar(0, 7, "P", true);
     lcd.setChar(0, 6, "P", true);
     break;
   case 3: // 4 digits each for played, total / ranked
-    lcd.showNumber(0,displaySSData[3],0,1,true,7);
-    lcd.showNumber(0,displaySSData[4],0,1,false,0);
+    lcd.showNumber(0,displaySSData[3],0,1,true);
+    lcd.showNumber(0,displaySSData[4],0,1,false);
     break;
   case 4: // 4 digits each for played, ranked / total
     lcd.showNumber(0,displaySSData[4],0,1,true,7);
-    lcd.showNumber(0,displaySSData[3],0,1,false,0);
+    lcd.showNumber(0,displaySSData[3],0,1,false);
     break;
   case 5: // totalPlays
-    lcd.showNumber(0,displaySSData[3],0,1,false,0);
+    lcd.showNumber(0,displaySSData[3],0,1,false);
     break;   
   case 6: // rankedPlays
-    lcd.showNumber(0,displaySSData[4],0,1,false,0);
+    lcd.showNumber(0,displaySSData[4],0,1,false);
     break;   
   case 7: // rank
-    lcd.showNumber(0,displaySSData[1],0,1);
+    lcd.showNumber(0,displaySSData[1]);
     break;
   case 8: // countryRank
-    lcd.showNumber(0,displaySSData[2],0,1);
+    lcd.showNumber(0,displaySSData[2]);
     break;
 
   //DEFAULT CASES
