@@ -4,9 +4,9 @@ var display# = [data, dataType, displayID];
 When setting these values, DO NOT CHANGE displayID.
 While good practive to set a value for data, it can be left blank if using a custom type other than 0.
 */
-var display0 = [0,0,0];
-var display1 = [0,0,1];
-var display2 = [0,0,2];
+var display0 = [0,2,0];
+var display1 = [0,3,1];
+var display2 = [0,7,2];
 //END CONFIG
 
 var LedControl = require("rpi-led-control");
