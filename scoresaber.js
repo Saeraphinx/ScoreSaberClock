@@ -90,24 +90,32 @@ switch (type) {
     lcd.setChar(0, 6, "P", true);
     break;
   case 3: // 4 digits each for played, total / ranked
-    lcd.showNumber(0,displaySSData[3],0,1,true);
-    lcd.showNumber(0,displaySSData[4],0,1,false);
+    lcd.showNumber(0,displaySSData[3],0,1,true,void 0,false);
+    lcd.showNumber(0,displaySSData[4],0,1,false,void 0,true);
     break;
   case 4: // 4 digits each for played, ranked / total
-    lcd.showNumber(0,displaySSData[4],0,1,true,7);
-    lcd.showNumber(0,displaySSData[3],0,1,false);
+    lcd.showNumber(0,displaySSData[4],0,1,true,void 0,false);
+    lcd.showNumber(0,displaySSData[3],0,1,false,void 0,true);
     break;
   case 5: // totalPlays
-    lcd.showNumber(0,displaySSData[3],0,1,false);
+    lcd.showNumber(0,displaySSData[3],0,1,false,void 0,true);
     break;   
   case 6: // rankedPlays
-    lcd.showNumber(0,displaySSData[4],0,1,false);
+    lcd.showNumber(0,displaySSData[4],0,1,false,void 0,true);
     break;   
   case 7: // rank
-    lcd.showNumber(0,displaySSData[1]);
+    lcd.showNumber(0,displaySSData[1],0,1,false,void 0,true);
     break;
   case 8: // countryRank
-    lcd.showNumber(0,displaySSData[2]);
+    lcd.showNumber(0,displaySSData[2],0,1,false,void 0,true);
+    break;
+  case 9: // 4 digits each for rank, rank / country
+    lcd.showNumber(0,displaySSData[1],0,1,true,void 0,false);
+    lcd.showNumber(0,displaySSData[2],0,1,false,void 0,true);
+    break;
+  case 10: // 4 digits each for rank, country / rank
+    lcd.showNumber(0,displaySSData[2],0,1,true,void 0,false);
+    lcd.showNumber(0,displaySSData[1],0,1,false,void 0,true);
     break;
 
   //DEFAULT CASES
