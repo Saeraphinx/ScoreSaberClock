@@ -85,38 +85,38 @@ let type = display[1];
 switch (type) {
   // SPECIAL CASES
   case 2: // pp
-    lcd.showNumber(display[2],displaySSData[0],1,5,false,0);
-    lcd.setChar(display[2], 7, "P", true);
-    lcd.setChar(display[2], 6, "P", true);
+    lcd.showNumber(0,displaySSData[0],1,5,false,0);
+    lcd.setChar(0, 7, "P", true);
+    lcd.setChar(0, 6, "P", true);
     break;
   case 3: // 4 digits each for played, total / ranked
-    lcd.showNumber(display[2],displaySSData[3],0,1,true,7);
-    lcd.showNumber(display[2],displaySSData[4],0,1,false,0);
+    lcd.showNumber(0,displaySSData[3],0,1,true,7);
+    lcd.showNumber(0,displaySSData[4],0,1,false,0);
     break;
   case 4: // 4 digits each for played, ranked / total
-    lcd.showNumber(display[2],displaySSData[4],0,1,true,7);
-    lcd.showNumber(display[2],displaySSData[3],0,1,false,0);
+    lcd.showNumber(0,displaySSData[4],0,1,true,7);
+    lcd.showNumber(0,displaySSData[3],0,1,false,0);
     break;
   case 5: // totalPlays
-    lcd.showNumber(display[2],displaySSData[3],0,1,false,0);
+    lcd.showNumber(0,displaySSData[3],0,1,false,0);
     break;   
   case 6: // rankedPlays
-    lcd.showNumber(display[2],displaySSData[4],0,1,false,0);
+    lcd.showNumber(0,displaySSData[4],0,1,false,0);
     break;   
   case 7: // rank
-    lcd.showNumber(display[2],displaySSData[1],0,1);
+    lcd.showNumber(0,displaySSData[1],0,1);
     break;
   case 8: // countryRank
-    lcd.showNumber(display[2],displaySSData[2],0,1);
+    lcd.showNumber(0,displaySSData[2],0,1);
     break;
 
   //DEFAULT CASES
   case 1: // Double, rounded to hundreths 
-    lcd.showNumber(display[2],display[0],2,3);
+    lcd.showNumber(0,display[0],2,3);
     break;
   case 0: // Integer, no formatting
   default:
-    lcd.showNumber(display[2],display[0])  
+    lcd.showNumber(0,display[0])  
     break;
 }
 console.log("Display" + display[2] + " with type " + type);
