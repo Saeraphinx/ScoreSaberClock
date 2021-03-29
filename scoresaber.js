@@ -22,7 +22,7 @@ callAPI();
 setInterval(function(){
 callAPI();
 console.log("\n\n\n" + Date.now() + ": Calling ScoreSaber API (setInterval 30s)");
-}, 300000);
+}, 600000);
 
 function callAPI(){
   console.log(Date.now() + ": Calling ScoreSaber API (callAPI())");
