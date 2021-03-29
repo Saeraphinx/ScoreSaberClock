@@ -80,7 +80,7 @@ let type = display[1];
 switch (type) {
   // SPECIAL CASES
   case 2: // pp
-    lc.showNumber(display[2],displaySSData[0],1,5,false,4);
+    lc.showNumber(display[2],displaySSData[0],1,5,false,0);
     lc.setChar(display[2], 7, "P", true);
     lc.setChar(display[2], 6, "P", true);
     break;
