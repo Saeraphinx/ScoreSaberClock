@@ -1,2 +1,2 @@
-cd ~/LED
+cd ~/ssclock
 node scoresaber.js

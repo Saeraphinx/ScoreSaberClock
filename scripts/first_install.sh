@@ -3,12 +3,10 @@
 
 # First Install
 cd ~
-mkdir /LED
-cd ~/LED
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install node
 npm install rpi-led-control
-wget https://github.com/TM0D/ScoreSaberClock/releases/latest/download/release.zip
-unzip release.zip
-rm release.zip
+wget https://github.com/TM0D/ScoreSaberClock/releases/latest/download/ssclock.zip
+unzip ssclock.zip
+rm ssclock.zip

@@ -1,5 +1,6 @@
 cd ~
-wget https://github.com/USER/PROJECT/releases/latest/download/release.zip
-unzip release.zip
-rm release.zip
+rm -rf ssclock
+wget https://github.com/TM0D/ScoreSaberClock/releases/latest/download/ssclock.zip
+unzip ssclock.zip
+rm ssclock.zip
 
