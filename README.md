@@ -1,5 +1,5 @@
 # ScoreSaberClock
-Displays ScoreSaber Stuff on 7 segment displays.
+Displays ScoreSaber Stuff on 3 MAX7219 7 segment displays.
 
 ### Display Types
 ~~coming soon i guess, need to write them down~~
