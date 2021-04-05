@@ -9,6 +9,7 @@ var display1 = [0,3,1];
 var display2 = [0,7,2];
 //END CONFIG
 
+// ignore this stuff unless things do really wrong, then contact me on discord (TM0D#4533)
 var LedControl = require("rpi-led-control");
 var lc = new LedControl(14,18,15);
 var ld = new LedControl(13,26,19);
