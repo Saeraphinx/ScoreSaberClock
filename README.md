@@ -3,6 +3,7 @@ Displays ScoreSaber Stuff on 7 segment displays.
 
 ### Display Types
 ~~coming soon i guess, need to write them down~~
+
 Type 2: formatted pp
 
 Type 3: total played / ranked played, each uses 4 digits
