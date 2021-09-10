@@ -53,23 +53,24 @@ http.request(
 }
 
 function prepData() {
-  displaySSData[0] = Number(ss.substring(ss.indexOf("\"pp\": ") + 6, ss.indexOf(",", ss.indexOf("\"pp\": "))));
-  //display 0: pp
 
-  displaySSData[1] = Number(ss.substring(ss.indexOf("\"rank\": ") + 8, ss.indexOf(",", ss.indexOf("\"rank\": "))));
-  //display 1: rank
+  let ssData = JSON.parse(ss);
+  let ssRankedAcc = ssData.scoreStats.averageRankedAccuracy;
+  // ssRankedAcc = ssRankedAcc * 1000;
+  // ssRankedAcc = (parseInt(ssRankedAcc)) / 1000;
 
-  displaySSData[2] = Number(ss.substring(ss.indexOf("\"countryRank\": ") + 15, ss.indexOf(",", ss.indexOf("\"countryRank\": "))));
-  //display 2: countryRank
+  displaySSData[0] = ssData.playerInfo.pp;
+  displaySSData[1] = ssData.playerInfo.rank;
+  displaySSData[2] = ssData.playerInfo.contryRank;
+  displaySSData[3] = ssData.scoreStats.totalPlayCount;
+  displaySSData[4] = ssData.scoreStats.rankedPlayCount;
+  displaySSData[5] = ssRankedAcc
 
-  displaySSData[3] = Number(ss.substring(ss.indexOf("\"totalPlayCount\": ") + 18, ss.indexOf(",", ss.indexOf("\"totalPlayCount\": "))));
-  //display 3: totalPlayCount
+  /* TODO:
+      write math and code for history of rank & rank change,
+      would be a nice display to have
+  */
 
-  displaySSData[4] = Number(ss.substring(ss.indexOf("\"rankedPlayCount\": ") + 19, ss.indexOf("}", ss.indexOf("\"rankedPlayCount\": ") - 3)));
-  //display 4: rankedPlayCount
-
-  displaySSData[5] = Number(ss.substring(ss.indexOf("\"averageRankedAccuracy\": ") + 25, ss.indexOf(",", ss.indexOf("\"averageRankedAccuracy\": "))));
-  //display 5: averageRankedAcc
   console.log(Date.now() + ": Completed Data Processing (" + displaySSData + ")");
 
 
