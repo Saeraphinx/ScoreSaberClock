@@ -59,9 +59,9 @@ function prepData() {
   // ssRankedAcc = ssRankedAcc * 1000;
   // ssRankedAcc = (parseInt(ssRankedAcc)) / 1000;
 
-  displaySSData[0] = ssData.playerInfo.pp;
-  displaySSData[1] = ssData.playerInfo.rank;
-  displaySSData[2] = ssData.playerInfo.contryRank;
+  displaySSData[0] = ssData.pp;
+  displaySSData[1] = ssData.rank;
+  displaySSData[2] = ssData.contryRank;
   displaySSData[3] = ssData.scoreStats.totalPlayCount;
   displaySSData[4] = ssData.scoreStats.rankedPlayCount;
   displaySSData[5] = ssRankedAcc
