@@ -30,7 +30,7 @@ function callAPI(){
 const http = require("https")
 http.request(
     {
-      hostname: "new.scoresaber.com",
+      hostname: "scoresaber.com",
       path: "/api/player/76561198323656813/full",
     },
     res => {
